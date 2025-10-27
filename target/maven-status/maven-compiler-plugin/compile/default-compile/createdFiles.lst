@@ -1,0 +1,17 @@
+com\turismo\model\Cliente.class
+com\turismo\controller\PagamentoController.class
+com\turismo\controller\PacoteInternacionalController.class
+com\turismo\model\Pacote.class
+com\turismo\model\Transporte.class
+com\turismo\repository\TransporteRepository.class
+com\turismo\controller\PacoteNacionalController.class
+com\turismo\repository\ClienteRepository.class
+com\turismo\repository\VendaRepository.class
+com\turismo\model\Hospedagem.class
+com\turismo\model\PacoteInternacional.class
+com\turismo\repository\PacoteRepository.class
+com\turismo\TurismoApplication.class
+com\turismo\controller\PaginaController.class
+com\turismo\model\Venda.class
+com\turismo\service\PacoteService.class
+com\turismo\repository\HospedagemRepository.class

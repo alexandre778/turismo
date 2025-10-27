@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Turismo - Pacote Nacional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" th:href="@{/}">AGM//SOFTWARE</a>
+        <div class="d-flex">
+            <a class="nav-link text-white" th:href="@{/pacote/nacional}">🇧🇷 Nacional</a>
+            <a class="nav-link text-white" th:href="@{/pacote/internacional}">🌎 Internacional</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-4">
+    <h2 class="text-center mb-4">Cálculo de Pacote Nacional (R$)</h2>
+
+    <form th:action="@{/pacote/nacional/calcular}" method="post" class="card p-4 shadow">
+        <div class="row mb-3">
+            <div class="col">
+                <label>Tipo de Transporte:</label>
+                <input type="text" name="tipoTransporte" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Valor Transporte (R$):</label>
+                <input type="number" name="valorTransporte" step="0.01" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label>Descrição Hospedagem:</label>
+                <input type="text" name="descricaoHospedagem" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Valor Diária (R$):</label>
+                <input type="number" name="valorDiaria" step="0.01" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label>Destino:</label>
+                <input type="text" name="destino" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Quantidade de Dias:</label>
+                <input type="number" name="quantidadeDias" min="1" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label>Nome do Cliente:</label>
+                <input type="text" name="nomeCliente" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Forma de Pagamento:</label>
+                <select name="formaPagamento" class="form-select">
+                    <option>Cartão</option>
+                    <option>Pix</option>
+                    <option>Dinheiro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label>Margem de Lucro (%):</label>
+                <input type="number" name="margemLucro" step="0.01" class="form-control" required>
+            </div>
+            <div class="col">
+                <label>Taxas Adicionais (R$):</label>
+                <input type="number" name="taxasAdicionais" step="0.01" class="form-control" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Calcular e Finalizar Pagamento</button>
+    </form>
+
+    <div class="text-center mt-4">
+        <a th:href="@{/}" class="btn btn-secondary">Voltar à Página Inicial</a>
+    </div>
+</div>
+
+<footer class="text-center mt-5 text-muted">
+    © 2025 AGM//SOFTWARE | Todos os direitos reservados
+</footer>
+
+</body>
+</html>
